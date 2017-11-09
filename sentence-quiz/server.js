@@ -3,7 +3,7 @@ var bodyParser = require('body-parser');
 var path = require('path');
 
 var app = express();
-var PORT = process.env.PORT || 3000;
+var PORT = 3000;
 
 //parsing
 app.use(bodyParser.json());
@@ -12,8 +12,17 @@ app.use(bodyParser.text());
 app.use(bodyParser.json({ type: 'application/vnd.api+json' }));
 
 //routes
-require('./app/routing/apiRoutes.js')(app); 
-require('./app/routing/htmlRoutes.js')(app);
+app.get('/', function(req, res){
+	res.sendFile(path.join(__dirname, "home.html"));
+});
+
+app.get('/score', function(req, res){
+	res.sendFile(path.join(__dirname, "scores.js"));
+});
+
+app.get('/matching', function(req, res){
+	res.sendFile(path.join(__dirname, "matchmodule.html"));
+});
 
 //listener
 app.listen(PORT, function () {
