@@ -20,9 +20,11 @@ app.get('/score', function(req, res){
 	res.sendFile(path.join(__dirname, "scores.js"));
 });
 
-app.get('/matching', function(req, res){
+app.get('/sentences', function(req, res){
 	res.sendFile(path.join(__dirname, "matchmodule.html"));
 });
+
+require("scores.js")(app,require("scores.js"))
 
 //listener
 app.listen(PORT, function () {
