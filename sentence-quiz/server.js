@@ -1,6 +1,8 @@
 var express = require('express');
 var bodyParser = require('body-parser');
 var path = require('path');
+var models = require('./models');
+
 
 var app = express();
 var PORT = 3000;
@@ -17,14 +19,18 @@ app.get('/', function(req, res){
 });
 
 app.get('/score', function(req, res){
-	res.sendFile(path.join(__dirname, "scores.js"));
+	res.sendFile(path.join(__dirname, "results.js"));
 });
 
 app.get('/sentences', function(req, res){
 	res.sendFile(path.join(__dirname, "matchmodule.html"));
 });
 
-require("scores.js")(app,require("scores.js"))
+models.sequelize.sync().then(function(){
+    console.log("success");
+}).catch(function(err){
+    console.log(err,"failure");
+})
 
 //listener
 app.listen(PORT, function () {
