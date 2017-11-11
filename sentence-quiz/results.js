@@ -1,0 +1,6 @@
+var newResult = {
+
+		questionId: ,
+		answers: 
+		
+}
