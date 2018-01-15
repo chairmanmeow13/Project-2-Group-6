@@ -1,5 +1,6 @@
 module.exports = function(app,students){
 
+	//simply for changing student home page layout
 	app.post("/home/changeLayout",function(req,res){
 		var layout = {
 			chosenBackground:req.body.chosenBGPic,
