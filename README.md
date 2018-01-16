@@ -4,7 +4,7 @@ Visit https://emotionalexplorers.herokuapp.com to check out the site!
 
 Site for teaching children with autism how to understand emotions.
 
-Uses Node.js, Express, MySQL and Sequelize, Handlebars and AWS to set up personalized quiz modules for students to take quizzes and counselors for analyzing their students' results.
+Uses Node.js, Express, MySQL and Sequelize, Handlebars, Passport.js and AWS to set up personalized quiz modules for students to take quizzes and counselors for analyzing their students' results.
 
 The homepage for the student is customizable. The student can choose from several different profile pictures and backgrounds to make their homepage personal to them.
 
